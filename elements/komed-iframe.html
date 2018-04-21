@@ -1,0 +1,37 @@
+<link rel="import" href="polymer/polymer.html">
+<link rel="import" href="iron-flex-layout/iron-flex-layout-classes.html">
+<dom-module id="komed-iframe">
+    <template>
+        <style include="shared-styles iron-flex iron-flex-alignment">
+        :host {
+            display: block;
+        }
+        </style>
+        <p class="grid-border-top">&nbsp;</p>
+        <div class="layout horizontal center top-bar">
+            <h1>Welcome: komed-iframe</h1>
+            <p>[[currentPatient.data.extras.full_name]]</p>
+        </div>
+        <p class="grid-border-top">&nbsp;</p>
+    </template>
+    <script>
+
+    Polymer({
+
+        is: 'komed-iframe',
+
+        behaviors: [ReduxBehavior],
+
+        properties: {
+            currentPatient: {
+                type: Object,
+                statePath: 'currentPatient'
+            }
+        },
+
+        ready: function() {
+            //console.log('HELLO: READY - properties!', properties);
+        }
+    });
+    </script>
+</dom-module>
